@@ -1,0 +1,118 @@
+/* ========== RESET & BASE STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ========== HEADER ========== */
+.header {
+  background: #004aad;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ========== NAVBAR (FLEXBOX) ========== */
+.navbar {
+  background: #222;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 2rem; /* spacing between items */
+  list-style: none;
+  padding: 0.75rem;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-list a:hover {
+  color: #00b4d8;
+}
+
+/* ========== MAIN LAYOUT (GRID) ========== */
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* content + sidebar */
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* Content Area */
+.content {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #e0e0e0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* FLEXBOX CARDS */
+.card-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+.card {
+  flex: 1 1 200px; /* flexible width, min 200px */
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: #004aad;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr; /* stack content & sidebar */
+  }
+
+  .nav-list {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column; /* vertical nav */
+    align-items: center;
+  }
+
+  .card-container {
+    flex-direction: column; /* stack cards */
+  }
+}
